@@ -1,0 +1,41 @@
+/* Mobile First Approach */
+.diary-container {
+  @apply min-h-screen w-full max-w-5xl mx-auto p-4;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .diary-book {
+    @apply w-full max-w-sm;
+  }
+  
+  .diary-page {
+    @apply w-full p-4;
+  }
+  
+  .controls-container {
+    @apply flex-col gap-2;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .diary-book {
+    @apply w-[500px];
+  }
+  
+  .diary-page {
+    @apply w-full p-6;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .diary-book {
+    @apply w-[600px];
+  }
+  
+  .diary-page {
+    @apply w-full p-8;
+  }
+}

@@ -1,0 +1,54 @@
+/* Page Animations */
+.page-turn {
+  transition: transform var(--animation-duration) var(--animation-easing);
+  transform-origin: left;
+  perspective: 1000px;
+}
+
+.page-turn-enter {
+  transform: rotateY(-180deg);
+}
+
+.page-turn-enter-active {
+  transform: rotateY(0);
+}
+
+.page-turn-exit {
+  transform: rotateY(0);
+}
+
+.page-turn-exit-active {
+  transform: rotateY(180deg);
+}
+
+/* Text Animations */
+.text-writing {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: writing var(--animation-duration) var(--animation-delay) var(--animation-easing) forwards;
+}
+
+@keyframes writing {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-highlight {
+  position: relative;
+}
+
+.text-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.2em;
+  background-color: var(--color-primary-light);
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--animation-duration) var(--animation-easing);
+}
